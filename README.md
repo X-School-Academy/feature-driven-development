@@ -1,222 +1,215 @@
-# Feature-Driven Development
+# **AI Feature-Driven Development (AI-FDD): A New Blueprint for Human–AI Co-Development**
 
-A specification and rules framework for AI coding agents to follow a structured, feature-driven development workflow.
+## **Introduction: Coding Knowledge Is No Longer the Bottleneck**
 
-## Overview
+For most of software history, humans wrote code, designed system architecture, and carried the burden of understanding every detail. But with modern large language models (LLMs), that traditional workflow is becoming inefficient. Developers no longer need to remember every syntax, pattern, or architecture rule. Instead, the bottleneck has shifted:
 
-This project provides a comprehensive set of rules and guidelines for AI agents (like Claude, GPT, etc.) to follow when assisting with software development. It enforces a feature-driven approach where tasks are clearly defined, documented, and tracked through a structured workflow.
+> **The hard part is not coding — the hard part is clearly describing what the software should do.**
 
-## Purpose
+This shift leads us to a new development theory: **AI Feature-Driven Development (AI-FDD)** — a model where humans act as *feature architects*, and AI acts as the *feature implementer*.
+This process enables **fast, scalable, low-error development**, even for complex multi-service products.
 
-The Feature-Driven Development rules ensure that:
-- Every task is properly refined and documented before implementation
-- Features are self-descriptive and well-organized
-- Code changes are accompanied by documentation and API references
-- Developers can easily search and review implementations
-- Project context is maintained through structured feature files
+## Getting Started
 
-## Quick Start
+- Quick start for running the workflow with an agent: `quick-start.md`
+- Rules for agent behavior: `feature-driven-development-rules.md`
+- Agent prompt entrypoint: `AGENTS.md`
+- Additional practices for incremental, verifiable delivery: `BEST_PRACTICES.md`
 
-### Setting Up the Agent
+---
 
-To enable an AI agent to follow these rules, include the `AGENTS.md` file in your AI assistant's context. The agent will automatically reference the `feature-driven-development-rules.md` file.
+# **1. What Is AI Feature-Driven Development?**
 
-When the agent starts working, it should respond with:
-> "I am your feature-driven code developer"
+AI-FDD is a development framework built around one core idea:
 
-This confirms it has read and understood the rules.
+> **Forget the code. Forget the implementation details. Focus only on the final feature from the user's perspective.**
 
-### Basic Usage
+In AI-FDD, a human no longer thinks in classes, functions, data flow, or system design. Instead, they think in **Atom Features** — small, complete units of functionality that meet these criteria:
 
-The framework defines several commands to interact with the AI agent:
+### ✔ *Atom Feature Requirements*
 
-#### `task xxx`
-Start a new task by referencing a prompt file in `prompts/xxx.md`.
+1. **User-viewpoint only:** Described as what the user wants, not how to code it.
+2. **Fully achievable by the current AI model:** No ambiguity, no edge cases the model cannot handle.
+3. **Easy for humans to review:** The resulting code must be understandable in minutes.
+4. **Indexable:** Each feature becomes an “index term” the LLM can reference later (like a mental symbol table).
 
-**Workflow:**
-1. Agent refines the task and creates `features/yyy-zzz.md` for review
-2. After user confirmation, implementation begins
-3. Upon completion, agent creates:
-   - `features/docs/yyy-zzz.md` - Developer documentation
-   - `features/apis/yyy-zzz.md` - API reference
-4. User confirms final documentation to complete the task
+These Atom Features form a **feature blueprint** — not a UML diagram, not technical architecture, but a human-readable *map of the product*.
 
-#### `complete yyy-zzz`
-Complete the implementation for an existing feature defined in `features/yyy-zzz.md`.
+---
 
-#### `refer yyy-zzz`
-Reference an existing feature specification, reading the associated documentation and API files.
+# **2. Why “Forget Coding Knowledge”?**
 
-#### `review yyy-zzz`
-Perform a code review for a feature using its specification, documentation, and API files.
+Modern AI models are very good at producing correct implementations when given clear intent. But humans often pollute their intent with unnecessary technical noise.
 
-#### `search xxx`
-Instruct the agent to search the internet for solutions.
+AI-FDD intentionally removes:
 
-#### `do`
-Process the currently opened markdown file in your IDE (interprets as either `task` or `complete` based on the file location).
+* low-level coding instructions
+* architectural assumptions
+* technical jargon
+* step-by-step directives
+* “implementation thinking”
 
-## File Structure
+Instead, the human gives pure **feature-level thinking**, which aligns with how AI understands instructions: clearer, simpler, and without contradictions.
 
-```
-project-root/
-├── prompts/           # Task prompt files
-│   └── xxx.md         # Initial task descriptions
-├── features/          # Feature specifications and documentation
-│   ├── readme.md      # Project overview and feature index
-│   ├── yyy-zzz.md     # Feature specification
-│   ├── docs/          # Feature documentation
-│   │   └── yyy-zzz.md # Implementation details, file paths, functions
-│   └── apis/          # API documentation
-│       └── yyy-zzz.md # Interface definitions and references
-├── AGENTS.md          # Agent prompt configuration
-└── feature-driven-development-rules.md  # Core rules
-```
+The result:
+AI produces cleaner code, faster, and with fewer errors.
 
-## Naming Conventions
+---
 
-Feature names (`yyy-zzz`) should be:
-- Short and self-descriptive
-- Focused on the feature itself, not the action
-- **Avoid** words like: `issue`, `add`, `update`, `bugfix`, `refactor`, `ticket`
+# **3. The Development Cycle in AI-FDD**
 
-**Good Examples:**
-- `user-authentication`
-- `payment-gateway`
-- `real-time-notifications`
+AI-FDD follows a **three-stage iterative process**:
 
-**Bad Examples:**
-- `add-login-feature`
-- `fix-payment-bug`
-- `update-notifications`
+---
 
-## Documentation Standards
+## **Stage 1 — Human Defines the MVP Through Features**
 
-### Feature Specification (`features/yyy-zzz.md`)
-- Define the feature scope and requirements
-- Outline implementation approach
-- Only updated when explicitly requested by the user
+The human (or product owner) writes **a batch of Atom Features** that together form the Minimum Viable Product.
 
-### Documentation File (`features/docs/yyy-zzz.md`)
-- Written for other developers
-- Include file paths, function names, and keywords for code search
-- **Do not** use line numbers as references (they change)
-- Updated after code reviews when fixes are confirmed
+Examples:
 
-### API File (`features/apis/yyy-zzz.md`)
-- Define interfaces for internal or external development
-- Follow standard API documentation conventions
-- Serve as package/module reference
-- Updated alongside documentation when confirmed
+* “User can upload a video and preview it before saving.”
+* “System sends an email when registration is completed.”
+* “Dashboard shows user’s daily analytics in a simple chart.”
 
-## Workflow Rules
+Each is small, testable, and deliverable by AI in one pass.
 
-### Task Splitting
-Large tasks should be split into subtasks:
-1. Create separate feature files for each subtask
-2. Complete subtasks one by one
-3. Get user confirmation after each subtask completion
+---
 
-### Updating vs Creating Features
-Not every task requires a new feature file. Consider:
-- Can this update an existing feature?
-- Is this a bug fix for an existing feature?
-- Does this enhance current functionality?
+## **Stage 2 — AI Implements One Atom Feature at a Time**
 
-**Always ask the user to confirm** before creating or updating feature files.
+For each Atom Feature:
 
-### Synchronization
-When fixing bugs or updating code:
-- Update the related `features/yyy-zzz.md` (if needed)
-- Update `features/docs/yyy-zzz.md`
-- Update `features/apis/yyy-zzz.md`
-- Keep all documentation synchronized with the code
+1. Human selects the next feature from the blueprint.
+2. AI generates:
 
-### Memory Management
-The `features/readme.md` file serves as a memory aid:
-- Lists all feature files under `features/`
-- Provides general project information
-- Should be concise yet informative
-- Agent should periodically read and update it
+   * the code
+   * minimal documentation
+   * tests (optional)
+3. Human reviews it (takes ~2–3 minutes).
+4. Human approves or requests refinement.
 
-## Best Practices
+This continues until the entire MVP is complete.
 
-### Core Guidelines
+---
 
-1. **Start Small**: Begin with the smallest possible feature and grow incrementally
-2. **Understand Everything**: Review and understand every line before proceeding to the next feature
-3. **Avoid Big Features**: Never write large features all at once - split them into smaller pieces
-4. **No Errors ≠ Correct Code**: Working features don't guarantee correct implementation - you must understand the code deeply
+## **Stage 3 — Continuous Evolution Through More Atom Features**
 
-### Documentation Rules
+Once the MVP works:
 
-5. **Test Cases**: Do not include test cases in `features/**/*.md` unless explicitly asked
-6. **External References**: Do not reference external files in feature documentation; extract and include relevant content
-7. **Source Code Only**: Reference only actual source code or files under `features/`
-8. **Confirmation**: Always get user confirmation before creating/updating feature files
-9. **Context**: The agent should maintain full project context by periodically reading `features/readme.md`
+* Human adds new Atom Features.
+* AI implements the new feature.
+* Human reviews it.
+* Repeat forever.
 
-For comprehensive guidance on incremental development, code understanding, and quality practices, see [BEST_PRACTICES.md](BEST_PRACTICES.md).
+The system evolves like **modular Lego blocks**, instead of massive rewrites.
 
-## Example Workflow
+---
 
-```bash
-# User starts a new task
-User: task user-login
+# **4. How AI Uses Atom Feature Indexes to Overcome LLM Context Limits**
 
-# Agent refines and creates feature specification
-Agent: [Creates features/user-authentication.md]
-Agent: "Here's the refined feature specification. Please review."
+Large projects exceed LLM context windows.
+Traditional long documents cause:
 
-# User confirms
-User: "Looks good, proceed"
+* forgotten requirements
+* overwritten assumptions
+* hallucinated architecture
+* inconsistent codebases
 
-# Agent implements the feature
-Agent: [Implements code]
+But AI-FDD solves this elegantly:
 
-# Agent creates documentation
-Agent: [Creates features/docs/user-authentication.md]
-Agent: [Creates features/apis/user-authentication.md]
-Agent: "Implementation complete. Please review the documentation."
+### **Each Atom Feature becomes an “index” the AI can recall independently.**
 
-# User confirms
-User: "Approved"
+This creates a **feature map**:
 
-# Later, user needs to review
-User: review user-authentication
-Agent: [Analyzes code against documentation]
-```
+* AI does not require full project context.
+* AI references only the specific feature indexes relevant to the current task.
+* Human provides the correct subset of features to maintain consistency.
 
-## Integration
+Essentially, Atom Features act as a **lightweight RAG (Retrieval-Augmented Generation) system for code.**
 
-### Claude Code
-Add `AGENTS.md` to your Claude Code context files.
+---
 
-### Custom AI Agents
-Include the rules file in your agent's system prompt:
-```
-You are a feature driven code developer.
-@feature-driven-development-rules.md
-```
+# **5. Why This Method Works**
 
-### IDE Integration
-Open relevant feature files in your IDE when using the `do` command for context-aware processing.
+### **1. Humans Are Best at Describing Desired Outcomes**
 
-## Contributing
+Not syntax, not architecture — *intent*.
 
-Contributions are welcome! Please ensure any modifications to the rules maintain:
-- Clarity and simplicity
-- Structured workflow
-- Comprehensive documentation requirements
+### **2. AI Is Best at Generating Implementation**
 
-## License
+Given clear intention, AI produces code faster and with fewer errors than humans.
 
-MIT License - Copyright (c) 2025 X School Academy
+### **3. Small Features Reduce Error Surface**
 
-See [LICENSE](LICENSE) for full details.
+AI performs best when problems are small and atomic.
 
-## Resources
+### **4. Human Review Keeps Quality High**
 
-- [AGENTS.md](AGENTS.md) - Agent prompt configuration
-- [feature-driven-development-rules.md](feature-driven-development-rules.md) - Complete rule specification
-- [BEST_PRACTICES.md](BEST_PRACTICES.md) - Comprehensive best practices guide for incremental development and code understanding
+AI can generate; humans ensure correctness and standards.
+
+### **5. The Blueprint Makes Projects Scalable**
+
+Any human or AI agent can jump into the project and understand it immediately.
+
+---
+
+# **6. A Simple Example**
+
+### Atom Feature:
+
+**“User can reset their password via email link.”**
+
+AI outputs:
+
+* backend endpoint
+* token generation logic
+* email template
+* test cases
+* minimal documentation
+
+Human reviews in 2 minutes → approve → next feature.
+
+No system architecture decisions needed upfront.
+No overthinking.
+No “perfect design” paralysis.
+
+---
+
+# **7. What AI-FDD Means for the Future of Software Teams**
+
+### **Small teams can build enormous systems rapidly.**
+
+A single founder can build a startup backend, frontend, mobile app, and AI agents — if they work one feature at a time.
+
+### **Coding becomes a reviewing job, not a producing job.**
+
+Humans ensure correctness instead of writing boilerplate.
+
+### **Architecture becomes emergent, not pre-designed.**
+
+A clean and modular system emerges naturally from many well-defined features.
+
+### **Knowledge burden shifts from human memory to the AI blueprint.**
+
+Developers no longer need to “remember the whole codebase”.
+
+### **Development becomes playful and fast.**
+
+Think → describe → AI builds → review → next.
+
+---
+
+# **8. Conclusion: A New Way to Build Software with AI**
+
+AI Feature-Driven Development is not just a method — it is a new mindset:
+
+* **Don’t think in code.**
+* **Think in features.**
+* **Let AI implement.**
+* **Let humans review.**
+* **Grow the product slowly, one small Atom Feature at a time.**
+
+This framework makes software creation accessible, scalable, and incredibly fast — not only for professional developers but even for beginners who can describe features clearly.
+
+AI-FDD is the blueprint for **human–AI co-development**, where humans design the destination, and AI builds the road.
