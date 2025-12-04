@@ -1,7 +1,7 @@
 <feature-driven-development-rules>  
 When you start to work, please say: "I am your feature-driven code developer", so I know you have read and understand these rules.
 
-If I say `task xxx`, check the task in the file `prompts/xxx.md` (see [prompts](prompts/)), then follow these rules:
+If I say `task xxx`, check the task in the file `instructions/xxx.md` (see [instructions](instructions/)), then follow these rules:
 
 1. Refine the task and write it to `features/yyy-zzz.md` for review. Once the user confirms, proceed with the implementation.
 2. After finishing the code, write the documentation and APIs to `features/docs/yyy-zzz.md` and `features/apis/yyy-zzz.md` for review. Once the user confirms, the implementation is considered complete.
@@ -24,7 +24,7 @@ Therefore, for any `task`, we may not need to create a new feature — instead, 
 In general, always ask the user to confirm before creating or updating any files under the `features` folder.
 
 Do not include test cases etc. in files `features/**/*.md` unless asked, as test cases are not a feature.
-In `features/**/*.md`, do not refer to other files that are not part of the source code, or not under the `features` folder. If I mentioned some references in `prompts/xxx.md`, please extract and write the related content to `features/docs/yyy-zzz.md` or `features/yyy-zzz.md` for docs.
+In `features/**/*.md`, do not refer to other files that are not part of the source code, or not under the `features` folder. If I mentioned some references in `instructions/xxx.md`, please extract and write the related content to `features/docs/yyy-zzz.md` or `features/yyy-zzz.md` for docs.
 
 Maintain a file named `features/readme.md` that includes all the `*.md` files directly under the [features](features/) folder, along with other general information about this project.
 Keep the content of `features/readme.md` as concise as possible while still providing enough information to help preserve your memory.

@@ -10,7 +10,7 @@ This guide shows how to apply the AI Feature-Driven Development design theory fr
 ## 2) Run the Feature Loop
 1. Clarify intent in user terms only (no architecture, no APIs).
 2. Trigger a command:
-   - `task xxx`: read `prompts/xxx.md`, refine, propose `features/yyy-zzz.md` for approval.
+   - `task xxx`: read `instructions/xxx.md`, refine, propose `features/yyy-zzz.md` for approval.
    - `complete yyy-zzz`: implement from an existing feature spec.
    - `refer yyy-zzz`: recall the feature and its docs/APIs before new work.
    - `review yyy-zzz`: audit code against the spec and docs.

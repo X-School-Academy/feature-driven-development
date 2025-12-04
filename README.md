@@ -7,14 +7,17 @@ For most of software history, humans wrote code, designed system architecture, a
 > **The hard part is not coding — the hard part is clearly describing what the software should do.**
 
 This shift leads us to a new development theory: **AI Feature-Driven Development (AI-FDD)** — a model where humans act as *feature architects*, and AI acts as the *feature implementer*.
+AI-FDD is an applied form of agile development theory purpose-built for human–AI co-working: humans define and prioritize small features, the AI implements them, and the loop iterates quickly with clear review checkpoints.
 This process enables **fast, scalable, low-error development**, even for complex multi-service products.
 
 ## Getting Started
 
 - Quick start for running the workflow with an agent: [quick-start.md](quick-start.md)
+- Agile principles AI-FDD follows for AI developers: [agile-development.md](agile-development.md)
 - Rules for agent behavior: [feature-driven-development-rules.md](feature-driven-development-rules.md)
 - Agent prompt entrypoint: [AGENTS.md](AGENTS.md)
 - Additional practices for incremental, verifiable delivery: [BEST_PRACTICES.md](BEST_PRACTICES.md)
+- Human-to-AI instruction dropbox: place prompts/instructions in [instructions/](instructions/)
 
 ---
 
