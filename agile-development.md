@@ -1,172 +1,195 @@
-Here is your **updated and reorganized document**, with **User Story moved to the top** and rewritten as the **core element of Agile + AI coding**.
-I preserved your entire structure, improved clarity, and kept your diagram exactly as requested.
+# **Agile Development in the AI Era: A Structured Framework for AI-Assisted Software Engineering**
 
 ---
 
-# 🌪️ **What Is Agile Development?**
+## **Abstract**
 
-Agile is a **way of building software step-by-step**, instead of doing everything all at once.
-
-Traditional development = big plan → long time → big release → often wrong.
-Agile = small plan → build small piece → test → adjust → repeat.
-
-Agile focuses on:
-
-* **Fast feedback**
-* **Continuous improvement**
-* **Delivering real value early**
-* **Working software, not paperwork**
-
-This is perfect for the **AI era**, where AI can rapidly generate code, tests, and prototypes — and Agile provides the best structure to guide AI with clear instructions.
+The rapid evolution of AI-enabled software development requires a new approach to organizing work, defining requirements, and guiding automated code generation. This paper presents a modern interpretation of Agile development, emphasizing the central role of **User Stories** as the fundamental unit of work in AI-driven coding workflows. By restructuring Agile processes around clear, user-focused requirements, teams can leverage AI more effectively to generate code, tests, UI components, documentation, and iterative improvements. This paper defines key Agile concepts, explains their relationships, and introduces guidelines for writing AI-ready User Stories.
 
 ---
 
-# 🧱 **Key Concepts in Agile**
+## **1. Introduction**
+
+Traditional software development relies heavily on large upfront designs and long project timelines, often resulting in misaligned requirements and delayed feedback. Agile development emerged to address these challenges through small iterations, rapid feedback loops, and continuous delivery.
+
+In the AI era, these principles become even more essential. AI models excel when given **precise, granular instructions**, making Agile’s emphasis on small, well-defined requirements a natural fit. Among all Agile artifacts, **User Stories** become the most critical, acting not only as user requirements but also as the primary **prompting interface for AI coding agents**.
 
 ---
 
-# 📌 **1. User Story 
+## **2. Core Agile Concepts in an AI-Driven Workflow**
 
-A **User Story** is the fundamental building block of Agile development and the **best instruction format for AI coding**.
+This section defines the foundational components of Agile and reframes them for AI-assisted development.
 
-A User Story describes a feature **from the user’s viewpoint**, not from a technical angle.
+---
 
-Format:
+### **2.1 User Story (Primary Requirement Unit)**
+
+A **User Story** is a concise requirement written from the user’s perspective. It describes what the user wants, why they want it, and what value the feature provides.
+In AI-driven development, User Stories serve as:
+
+* user requirements
+* design constraints
+* coding prompts for AI
+* evaluation criteria for correctness
+
+**User Stories represent actual customer needs.**
+Before any coding occurs, we must understand:
+
+* *What does the user want?*
+* *Why do they need it?*
+* *How will they use it?*
+* *What problem does this feature solve?*
+
+Only with clear requirements can AI generate meaningful, correct software.
+
+**Standard format:**
 
 > **As a [user], I want [feature], so that [benefit].**
 
+---
+
+### **2.2 Product Backlog**
+
+A prioritized list of all requirements, including:
+
+* User Stories
+* feature ideas
+* bugs
+* improvements
+* technical tasks
+
+It represents the evolving scope of the entire system.
+
+---
+
+### **2.3 Sprint**
+
+A short, time-boxed development cycle (typically 1–2 weeks).
+A sprint delivers **working software**, not partially completed tasks.
+
+---
+
+### **2.4 Sprint Backlog**
+
+A selected subset of User Stories from the Product Backlog chosen for implementation during the current sprint.
+
+---
+
+### **2.5 Epic**
+
+A high-level, large-scale requirement that must be broken into multiple User Stories to be manageable for AI and humans.
+
+---
+
+### **2.6 Task**
+
+A small, actionable work item required to complete a User Story. AI systems often generate tasks automatically based on the User Story.
+
+---
+
+### **2.7 Story Points and Velocity**
+
+Estimation and capacity-measurement tools to track team and AI productivity across sprints.
+
+---
+
+## **3. Why User Stories Must Come First**
+
+User Stories are the foundation of AI-driven Agile development for the following reasons:
+
+1. **AI performs best with small, clear, user-centric instructions.**
+2. Each User Story serves as a ready-to-use **AI prompt** for generating code, UI, tests, and documentation.
+3. Large features (Epics) overwhelm AI; User Stories break them into **AI-manageable units**.
+4. Sprints are organized around **completing User Stories**, not tasks.
+5. User Stories represent **true user or customer requirements**, enabling developers and AI to understand:
+
+   * the purpose of the feature
+   * how users will interact with the product
+   * what problem the feature solves
+6. Clear User Stories reduce rework and improve AI output quality.
+
+---
+
+## **4. How to Write Perfect User Stories for AI Coding**
+
+AI coding agents require clear structure and context. This section provides guidelines for writing User Stories optimized for AI.
+
+---
+
+### **4.1 Follow the Standard User Story Template**
+
+> **As a [specific user], I want [feature or action], so that [value or outcome].**
+
 Example:
 
-> As a creator, I want to upload a video, so I can publish new content.
-
-### ⭐ Why User Stories MUST come first (especially in AI-driven development):
-
-* AI works best when instructions are **small, clear, and user-focused**.
-* Each User Story becomes a perfect **AI prompt** to generate code, UI, tests, and documentation.
-* Large features (Epics) confuse AI — user stories break them into **AI-manageable pieces**.
-* Sprints are built **around User Stories**, not tasks.
-
-In modern development:
-
-> **User Story = the smallest unit of value + the core input for AI coding.**
+> As a creator, I want to upload a video so that I can share new content with my audience.
 
 ---
 
-# 📌 **2. Product Backlog**
+### **4.2 Add AI-Ready Clarifications**
 
-The **master list** of all User Stories, features, bugs, and tasks.
+A good AI-ready User Story includes:
 
-It is the full inventory of everything the project may include.
-
-The Product Backlog grows over time as new ideas and requirements appear.
-
----
-
-# 📌 **3. Sprint**
-
-A **short development cycle**, normally:
-
-* **1 week**
-* **2 weeks** (most common)
-* **4 weeks**
-
-A Sprint contains **multiple user stories**, selected during Sprint Planning.
-The goal is to deliver completed, working features at the end of the sprint.
-
-Sprint cycle:
-
-1. Sprint Planning
-2. Sprint Execution
-3. Daily Standup
-4. Sprint Review
-5. Sprint Retrospective
+* **User goal** — what the user intends to accomplish
+* **Expected feature behavior** — what the system must do
+* **Edge cases or constraints** — any rules AI must follow
+* **Success criteria** — how we know the feature is correct
 
 ---
 
-# 📌 **4. Sprint Backlog**
+### **4.3 Keep the Scope Small**
 
-A subset of the Product Backlog.
+A User Story should be completable within one sprint.
+If it is too big, split it until:
 
-It contains:
-
-* The **User Stories chosen for this Sprint**
-* The **Tasks required to complete each story**
-
-Your **product backlog** = everything
-Your **sprint backlog** = only what you focus on this sprint
+* AI can generate the code without ambiguity
+* humans can test it quickly
+* acceptance criteria are specific
 
 ---
 
-# 📌 **5. Epic**
+### **4.4 Provide Acceptance Criteria**
 
-A very large feature that must be broken down into smaller user stories.
-
-Example Epic:
-**“AI video generation system.”**
-
-Break into stories:
-
-* Upload image
-* Generate base video
-* Extend 5s video
-* Add music
-* Add subtitles
-* Export video
-
----
-
-# 📌 **6. Task**
-
-A **small, actionable step** required to complete a User Story.
-
-User Story → Tasks
-Tasks → Done only inside a sprint
-
-Example tasks for “User Login”:
-
-* Create login API
-* Design login UI
-* Add validation
-* Connect frontend and backend
-* Write tests
-
----
-
-# 📌 **7. Story Points**
-
-A measurement of effort/complexity, not time.
-
-Common values:
-1, 2, 3, 5, 8, 13
-
-Story points help the team plan sprint capacity and track velocity.
-
----
-
-# 📌 **8. Velocity**
-
-The average number of story points finished per sprint.
+AI models benefit from explicit “done” definitions.
 
 Example:
-20 → 22 → 21 → average ≈ **21 points per sprint**
 
-Velocity helps predict delivery timelines and plan future sprints.
-
----
-
-# 📌 **9. Daily Standup**
-
-Short daily update:
-
-1. What did I do yesterday?
-2. What will I do today?
-3. Any blockers?
-
-This keeps the sprint on track.
+* User can successfully upload MP4, MOV, or WebM
+* Upload is limited to 500 MB
+* System displays progress bar
+* User receives success or error alerts
 
 ---
 
-# 🧩 How Everything Fits Together (Keep This)
+### **4.5 Connect User Stories to Real Use Cases**
+
+AI understands better when the context is real and grounded in an actual user scenario.
+
+Example improvement:
+
+❌ “Build video upload.”
+✔ “Creators need a simple way to upload their videos to publish content.”
+
+---
+
+## **5. Methodology: How Agile Operates in an AI Workflow**
+
+This section describes the workflow from backlog creation to sprint execution.
+
+---
+
+### **5.1 Process Flow**
+
+1. **Product Backlog** collects all User Stories.
+2. During **Sprint Planning**, the team selects which User Stories will be implemented.
+3. User Stories are broken into **tasks**, many of which can be generated automatically by AI.
+4. During the **Sprint**, developers and AI collaborate to complete tasks.
+5. **Sprint Review** demonstrates completed User Stories.
+6. **Sprint Retrospective** identifies improvements for next sprint.
+
+---
+
+## **6. User Story, Task, and Sprint Relationship Diagram**
 
 ```
 Product Backlog
@@ -189,27 +212,22 @@ Sprint Backlog
 During Sprint → Complete all tasks for these stories
 ```
 
-This diagram shows the **true workflow**:
+This diagram reflects the hierarchy:
 
-* Work starts with **User Stories**
-* Sprints select **User Stories**
+* Requirements start as **User Stories**, not tasks
+* Sprints select **User Stories**, not tasks
 * Tasks belong **inside** User Stories
-* The Sprint’s goal is to complete **whole User Stories**, not random tasks
 
 ---
 
-# 🔍 Quick Cheat Sheet
+## **7. Conclusion**
 
-| Term                | Meaning                           | Simple Explanation                       |
-| ------------------- | --------------------------------- | ---------------------------------------- |
-| **User Story**      | Small user-focused feature        | Core instruction for AI to generate code |
-| **Product Backlog** | Full list of work                 | Master to-do list                        |
-| **Sprint**          | 1–2 week cycle                    | Work period                              |
-| **Sprint Backlog**  | User stories selected this sprint | This sprint’s work                       |
-| **Epic**            | Huge feature                      | Too big for 1 sprint                     |
-| **Task**            | Small action item                 | Steps to finish a user story             |
-| **Story Points**    | Effort estimate                   | Difficulty score                         |
-| **Velocity**        | Points per sprint                 | Team speed                               |
-| **Standup**         | 15-min update                     | Sync and unblock                         |
+Agile development becomes significantly more powerful when integrated with AI coding technologies.
+In this workflow:
 
----
+* **User Stories are the core driver** of design, planning, and coding
+* Sprints ensure rapid delivery and feedback
+* AI accelerates implementation, testing, and documentation
+* Clear requirements lead to higher-quality AI-generated code
+
+This framework provides a scalable, efficient approach for building modern software systems using AI-assisted development practices.
