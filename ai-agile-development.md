@@ -67,6 +67,16 @@ It represents the evolving scope of the entire system.
 A short, time-boxed development cycle (typically 1–2 weeks).
 A sprint delivers **working software**, not partially completed tasks.
 
+**AI-Driven Development Requirement:**
+Since we will use AI for coding and humans will only test AI's work from an end-user or QA point of view, each day's tasks must end in something that is testable by a non-technical user or QA.
+
+For example:
+
+* Creating a database structure is not testable for a non-technical user, but saving data through the website and verifying that no data is lost is testable.
+* Finishing the "create video" function is not testable, but running a shell command to generate a test video and confirming the output is testable.
+
+Each day's plan must include: **"How to test or verify the work is correct."**
+
 ---
 
 ### **2.4 Sprint Backlog**
@@ -186,6 +196,39 @@ This section describes the workflow from backlog creation to sprint execution.
 4. During the **Sprint**, developers and AI collaborate to complete tasks.
 5. **Sprint Review** demonstrates completed User Stories.
 6. **Sprint Retrospective** identifies improvements for next sprint.
+
+---
+
+### **5.2 Writing the Sprints Plan**
+
+The Sprints plan must be written with daily testable deliverables. Each day's plan should follow this format:
+
+**Day 1**
+
+User Story: [User Story description]
+
+- Task 1
+- Task 2
+- Task 3
+
+How to test: [Specific instructions on how a non-technical user or QA can verify the work]
+
+**Day 2**
+
+User Story: [User Story description]
+
+- Task 1
+- Task 2
+- Task 3
+
+How to test: [Specific instructions on how a non-technical user or QA can verify the work]
+
+**Key Principles:**
+
+* Every day must end with something testable by non-technical users or QA
+* The "How to test" section must provide concrete, executable verification steps
+* Avoid technical-only deliverables that cannot be verified by end-users
+* Focus on user-visible outcomes rather than internal implementation details
 
 ---
 

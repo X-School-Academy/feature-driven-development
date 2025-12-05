@@ -6,7 +6,7 @@ AI-FDD is a lightweight blueprint for human–AI co-development within tradition
 
 - Theory: [ai-feature-driven-development.md](ai-feature-driven-development.md)
 - Quick start: [quick-start.md](quick-start.md)
-- Agile background: [agile-development.md](agile-development.md)
+- Agile background: [ai-agile-development.md](ai-agile-development.md)
 - Agent rules: [ai-feature-driven-development-rules.md](ai-feature-driven-development-rules.md)
 - Agent prompt entrypoint: [AGENTS.md](AGENTS.md)
 - Practices for incremental, verifiable delivery: [BEST_PRACTICES.md](BEST_PRACTICES.md)
